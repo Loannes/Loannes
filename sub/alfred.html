@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<title>Loannes.com</title>
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="../favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon/favicon.ico" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,800" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel= "stylesheet" type="text/css" href="../style.css">
+
+
+
+  <style>
+
+  .youtube { /* continer (responsive) */
+    position: relative;
+    cursor: pointer;
+    background: #ccc no-repeat center center / cover;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0px;
+    clear:both;
+  }
+
+  .youtube::before { /* play bubble */
+    content: '';
+    background: rgba(255, 255, 255, .6);
+    height: 80px;
+    width: 80px;
+    display:block;
+    margin: -40px 0 0 -40px;
+    border-radius: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0 0 20px 3px rgba(51, 51, 51, .8);
+    transition: all .1s ease;
+    z-index:1;
+  }
+
+  .youtube:hover::before { /* play bubble hover */
+    background: rgba(238, 238, 238, .8);
+    box-shadow: 0 0 10px 3px rgba(51, 51, 51, .8);
+    width: 100px;
+    height: 100px;
+    margin: -50px 0 0 -50px;
+  }
+
+  .youtube::after { /* Play Triangle */
+    content: '';
+    width: 0;
+    height: 0;
+    line-height:0px;
+    display:block;
+    border-style: solid;
+    border-width: 20px 0 20px 40px;
+    margin: -20px 0 0 -15px;
+    border-color: transparent transparent transparent #333;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 0;
+    width: 0;
+    z-index:2;
+  }
+  .youtube iframe{ /* youtube embed (responsive) */
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:3;
+  }
+  /* END Fast & Agile YouTube Embed by Schoberg.net */
+
+  /*ignore this*/
+  body{text-align:center;font-family:arial;color:#333;}
+
+
+  </style>
+
+</head>
+<body>
+
+<!-- Content - alfred -->
+<img class="w3-image w3-hide-medium w3-hide-small" src="../alfred.png">
+<img class="w3-image w3-hide-large" src="../alfred-mobile.png">
+
+<div style="color: #777;text-align:center;padding:20px 40px;text-align: justify;">
+  <p class="content">
+    <b>가계부</b> 앱을 사용할 때의 가장 큰 <b>불편</b>은 무엇일까요? 바로 <b>데이터의 입력</b>입니다. 지출 내용과 금액과 날짜를 직접 입력하는 것은 매우 불편한 작업입니다.
+    이러한 문제점을 해결하기 위해 <b>알프레드</b>가 만들어졌습니다. <b>알프레드</b>는 사용자의 입력을 최소화하는 것을 목표로 합니다. 바로 똑똑한 지능형 가계부 앱이죠.
+  </p>
+
+  <p class="content">
+    What are the biggest challenges to using the budget app?  <b>It is to input data.</b> It is very inconvenient to enter your expenses, amounts and dates directly. <b>Alfred was created to solve these problems.</b> Alfred aims to minimize user input. It's an intelligent smart household app.
+  </p>
+</div>
+
+<div class="wrapper youtube">
+    <div class="h_iframe">
+        <iframe src="https://www.youtube.com/embed/TzuVXDihBxs" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+<div style="margin-top:50px;color: #777;text-align:center;padding:20px 40px;text-align: justify;text-align: center;">
+  <h1 class="w3-hide-medium w3-hide-small app-content-desktop">Simple</h1>
+  <h5 class="w3-hide-large app-title-mobile" style="white-space:nowrap">Simple</h5>
+
+  <p class="content">
+    메세지에서 <b>복사 & 붙여넣기</b>, 이게 끝이에요! <b>알프레드</b>는 메세지의 형식을 <b>분석</b>해서 필요한 데이터를 <b>인식</b>해서 적용합니다.
+    또 이전에 <b>동일한 사용 기록이 있을 경우 카테고리도 자동으로 설</b>해 줍니다! <b>복사 & 붙여넣기, 이게 끝이에요! 참 쉽죠?</b>
+  </p>
+
+  <div class="w3-display-container w3-content w3-center" style="padding-top:20px;padding-bottom:20px;">
+      <h5 class="app-title-mobile">
+        <a href="alfred_banks.html">지원하는 은행 Supported Banks</a>
+      </h5>
+  </div>
+
+  <p class="content">
+    <b>Copy & paste</b> from text message, this is all! <b>Alfred</b> analyzes the format of the text message, <b>finds the bank and recognizes and applies the necessary data.</b>
+
+     It also automatically sets categories if you have the same history. <b>Copy & paste, this is the end! It's easy, is not it?</b>
+  </p>
+
+</div>
+
+
+
+<div class="w3-display-container w3-content w3-center" style="padding-bottom:50px;">
+  <a class="link" href="https://itunes.apple.com/us/app/alfred-account-book/id1239660348?l=ko&ls=1&mt=8">Download ></a>
+</div>
+
+
+<!-- Footer -->
+<br>&nbsp;<br>&nbsp;
+<div class="w3-display-container w3-content w3-center" style="max-width:1500px;background-color:#f2f2f2;">
+
+  <br>&nbsp;<br>&nbsp;
+  <h1 class="w3-hide-medium w3-hide-small app-content-sub-desktop">Contact</h1>
+  <h5 class="w3-hide-large app-content-sub-mobile" style="white-space:nowrap">Contact</h5>
+
+  <a class="link" href="mailto:loannes@me.com">loannes@me.com</a>
+
+  <br>&nbsp;<br>&nbsp;<br>&nbsp;
+
+  <h1 class="Copyright">Copyright © 2017 Loannes. All rights reserved.</h1>
+
+  <br>&nbsp;<br>&nbsp;<br>&nbsp;
+</div>
+
+
+</body>
+</html>
