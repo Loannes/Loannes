@@ -6,3 +6,10 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', 'UA-102435775-1', 'auto');
 ga('send', 'pageview');
+
+ga('send', {
+hitType: 'event',
+eventCategory: 'main',
+eventAction: 'connect',
+eventLabel: 'Main connect'
+});
