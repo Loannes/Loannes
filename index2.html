@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IronMage — I Like Box</title>
+  <!-- 구글 폰트 -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { font-family: 'Montserrat', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- 네비게이션 -->
+  <header class="fixed w-full z-20 bg-white/80 backdrop-blur-sm shadow">
+    <div class="max-w-5xl mx-auto flex items-center justify-between p-4">
+      <h1 class="text-2xl font-bold text-indigo-600">IronMage</h1>
+      <nav>
+        <ul class="flex space-x-6 text-gray-700">
+          <li><a href="#home" class="hover:text-indigo-600 transition">홈</a></li>
+          <li><a href="#features" class="hover:text-indigo-600 transition">특징</a></li>
+          <li><a href="#gallery" class="hover:text-indigo-600 transition">스크린샷</a></li>
+          <li><a href="#download" class="hover:text-indigo-600 transition">다운로드</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 히어로 섹션 -->
+  <section id="home" class="relative h-screen bg-[url('hero-bg.jpg')] bg-cover bg-center">
+    <!-- 그라데이션 오버레이 -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+      <h2 class="text-5xl font-extrabold text-white mb-4">I Like Box</h2>
+      <p class="text-lg text-white/90 mb-8">턱시도 고양이가 박스를 찾아 떠나는 귀여운 모험</p>
+      <a href="#download"
+         class="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg shadow-lg transition">
+        지금 플레이하기
+      </a>
+    </div>
+  </section>
+
+  <!-- 게임 특징 -->
+  <section id="features" class="py-20">
+    <div class="max-w-5xl mx-auto text-center px-4">
+      <h3 class="text-3xl font-bold text-gray-800 mb-12">게임 특징</h3>
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- 카드 반복 -->
+        <div class="p-6 bg-white rounded-xl shadow hover:shadow-xl transition">
+          <img src="icon-stages.svg" alt="스테이지" class="w-16 h-16 mx-auto mb-4"/>
+          <h4 class="font-semibold mb-2">다양한 스테이지</h4>
+          <p class="text-gray-600">퍼즐과 장애물이 가득한 20개 이상의 레벨을 즐길 수 있습니다.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow hover:shadow-xl transition">
+          <img src="icon-graphics.svg" alt="그래픽" class="w-16 h-16 mx-auto mb-4"/>
+          <h4 class="font-semibold mb-2">귀여운 그래픽</h4>
+          <p class="text-gray-600">아기자기한 색감과 캐릭터 애니메이션을 감상해보세요.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow hover:shadow-xl transition">
+          <img src="icon-controls.svg" alt="조작" class="w-16 h-16 mx-auto mb-4"/>
+          <h4 class="font-semibold mb-2">간편한 조작</h4>
+          <p class="text-gray-600">터치와 드래그만으로 박스를 찾아 이동합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 스크린샷 갤러리 -->
+  <section id="gallery" class="py-20 bg-gray-100">
+    <div class="max-w-5xl mx-auto text-center px-4">
+      <h3 class="text-3xl font-bold text-gray-800 mb-12">스크린샷</h3>
+      <div class="grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
+        <img src="screenshot1.jpg" alt="스크린샷1" class="rounded-lg shadow-md hover:scale-105 transition"/>
+        <img src="screenshot2.jpg" alt="스크린샷2" class="rounded-lg shadow-md hover:scale-105 transition"/>
+        <img src="screenshot3.jpg" alt="스크린샷3" class="rounded-lg shadow-md hover:scale-105 transition"/>
+        <img src="screenshot4.jpg" alt="스크린샷4" class="rounded-lg shadow-md hover:scale-105 transition"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- 다운로드 -->
+  <section id="download" class="py-20">
+    <div class="max-w-5xl mx-auto text-center px-4">
+      <h3 class="text-3xl font-bold text-gray-800 mb-6">다운로드</h3>
+      <div class="flex flex-col sm:flex-row justify-center gap-6">
+        <a href="#"
+           class="px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-medium rounded-lg shadow transition">
+          App Store
+        </a>
+        <a href="#"
+           class="px-6 py-3 bg-gray-800 hover:bg-gray-900 text-white font-medium rounded-lg shadow transition">
+          Google Play
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="bg-white py-8">
+    <div class="max-w-5xl mx-auto text-center text-gray-500">
+      &copy; 2025 IronMage. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
