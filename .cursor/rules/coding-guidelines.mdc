@@ -1,0 +1,119 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+This file is managed under .cursor/rules/*.mdc
+
+id: frontend-flow-readable-rules
+title: HTML, CSS, JavaScript 위→아래 흐름 기반 코딩 룰셋
+version: 1.0
+
+# 핵심 원칙
+* **모든 응답은 한글로 작성합니다.**
+* **코드는 '글처럼 위에서 아래로' 자연스럽게 읽히도록 작성합니다.**
+* **정확성**: 요구사항을 오해 없이 반영합니다.
+* **완전성**: 동작이 누락 없이 구현되며, 모든 흐름은 예외 처리 포함입니다.
+* **간결성**: 중복 제거, 불필요한 주석과 임시 변수 최소화
+* **가독성**: 관련 로직은 가까이 배치하고, 흐름을 방해하지 않도록 구성합니다.
+
+---
+
+# 구현 철학: "글처럼 읽히는 코드"
+
+* 최상단에는 **핵심 구조(HTML)** → 그 아래 **디자인(CSS)** → 마지막에 **기능(JS)** 순으로 구성
+* **JavaScript는 실행 흐름 순서대로 작성**  
+  → 상단에는 초기화 및 선언  
+  → 중간에는 주요 로직  
+  → 하단에는 이벤트 연결, 시작 지점 배치
+
+---
+
+# 개발 절차
+
+1. **계획 단계**
+   * UI 구조를 HTML5 시맨틱 태그로 먼저 설계합니다.
+   * 컴포넌트 단위로 CSS 클래스를 정의하고 BEM 또는 모듈 이름 기준으로 분리합니다.
+   * JavaScript는 의도 흐름(초기화 → 처리 → 후처리)을 의식해서 의사코드부터 작성합니다.
+
+2. **구현 단계**
+   * HTML → CSS → JS 순서로 작성하되, JS도 함수 순서가 사용자 흐름과 맞도록 구성합니다.
+   * JS 함수 호출 순서에 맞춰 정의 순서를 배치하며, 상단에 핵심 로직이 요약되도록 유지합니다.
+   * JS는 `const`, `let`, 화살표 함수 등 ES6 문법 사용
+
+3. **검증 단계**
+   * HTML: W3C Validator
+   * CSS: 브라우저 테스트 + Lighthouse
+   * JS: 콘솔 오류 확인 + 기능별 단위 테스트
+
+---
+
+# HTML 스타일
+
+* HTML5 시맨틱 태그 우선 사용 (`<header>`, `<main>`, `<section>`, `<footer>`)
+* 구조는 항상 위에서 아래로 시각적 흐름을 따라갑니다
+* `id`는 JS 연결용, `class`는 스타일링용으로 구분 사용
+* 인라인 style/JS 사용 금지
+
+---
+
+# CSS 스타일
+
+* `style.css` 등 별도 파일로 분리
+* 컴포넌트 기준으로 클래스 네이밍 (`.header-title`, `.card-content` 등)
+* BEM 혹은 기능 기반 명명 사용 (`.btn`, `.btn--primary`)
+* 공통 속성은 변수(`--color-primary`) 또는 Sass mixin으로 재사용
+* 스타일 선언 순서:  
+  → 박스 모델 (margin/padding)  
+  → 타이포그래피 (font, color)  
+  → 레이아웃 (display, position)  
+  → 기타
+
+---
+
+# JavaScript 스타일
+
+* 상단: 변수 선언, 초기 상태, 설정값
+* 중단: 주요 기능 함수 정의 (DOM 처리, 계산 등)
+* 하단: 이벤트 바인딩 및 초기 실행 함수
+* `addEventListener` 사용 권장, `onclick` 등 인라인 사용 금지
+* `async/await`, `try/catch` 필수 예외 처리
+* 불필요한 전역 변수 금지, 모든 함수는 위에서 호출 → 아래에서 정의
+
+---
+
+# 접근성과 보안
+
+* `alt`, `aria-*`, `label` 속성 필수 사용
+* 사용자 입력 검증 필수 (`sanitizeInput`, `length check` 등)
+* 콘텐츠는 JS 없이도 기본 동작되도록 설계 (progressive enhancement)
+* HTTPS 필수, CSP(Security Policy) 및 CORS 설정 고려
+
+---
+
+# 성능 최적화
+
+* 이미지 용량 최적화 (WebP, lazy loading)
+* CSS는 `head`에, JS는 `defer`로 `body` 하단 또는 외부
+* 필요 없는 JS/라이브러리는 제거
+* 코드 압축(minify), 캐시 전략 적용
+
+---
+
+# 테스트 및 품질
+
+* ESLint + Prettier 사용
+* 모듈화 + 책임 분리 (HTML, CSS, JS 영역별로)
+* 기능별 테스트 함수 포함
+* 사용자 흐름에 맞는 테스트 시나리오 기반
+
+---
+
+# [cmw] 명령어 사용 규칙
+
+사용자가 `cmw` 입력 시:
+
+1. `git diff | cat` 으로 변경 사항 확인
+2. `git status | cat` 으로 상태 점검
+3. 변경 요약을 마크다운 코드블록 형태로 출력하며,
+4. 모든 변경은 "위에서 아래로 어떤 흐름이 새로 생겼는지" 중심으로 요약
