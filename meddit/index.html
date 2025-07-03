@@ -63,7 +63,8 @@
     </div>
     <script>
         (async () => {
-            const apiEndpoint = 'http://localhost:8000/api/redirect-log'; // 나중에 실제 주소로 변경하세요.
+            // const apiEndpoint = 'http://localhost:8000/api/redirect-log'; // 나중에 실제 주소로 변경하세요.
+            const apiEndpoint = 'https://imgs.loannes.com/api/redirect-log'; // 나중에 실제 주소로 변경하세요.
             const urlParams = new URLSearchParams(window.location.search);
             const sourceUrl = urlParams.get('source_url');
             const destinationUrl = urlParams.get('destination_url') || 'https://www.naver.com';
