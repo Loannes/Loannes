@@ -1,0 +1,40 @@
+# Completely block all bots and crawlers from accessing images
+<IfModule mod_setenvif.c>
+    SetEnvIfNoCase User-Agent "." bot_request
+</IfModule>
+
+# Block access to all files for any bot-like user agents
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} (bot|crawl|slurp|spider|archiver|scraper|facebookexternalhit|twitterbot|linkedinbot|whatsapp|googlebot|bingbot|NaverBot|DaumBot|YandexBot|Baiduspider|ia_archiver) [NC]
+RewriteRule .* - [F,L]
+
+# Additional protection - block any request that doesn't have a proper referer
+RewriteCond %{HTTP_REFERER} !^https?://(.*\.)?loannes\. [NC]
+RewriteCond %{HTTP_USER_AGENT} (bot|crawl|slurp|spider|archiver|scraper) [NC]
+RewriteRule .* - [F,L]
+
+# Prevent direct access to images from search engines
+RewriteCond %{HTTP_REFERER} (google|bing|naver|daum|yahoo|yandex|baidu) [NC]
+RewriteRule \.(jpg|jpeg|png|gif|bmp|tiff|webp|svg)$ - [F,L]
+
+# Disable directory browsing
+Options -Indexes
+
+# Block access to this .htaccess file
+<Files ".htaccess">
+    Require all denied
+</Files>
+
+# Set headers to prevent indexing
+<IfModule mod_headers.c>
+    Header set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate"
+    Header set Cache-Control "no-cache, no-store, must-revalidate, private"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+</IfModule>
+
+# Content type protection
+<FilesMatch "\.(jpg|jpeg|png|gif|bmp|tiff|webp|svg)$">
+    Header set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet, noimageindex"
+    Header set Cache-Control "no-cache, no-store, must-revalidate, private"
+</FilesMatch> 
