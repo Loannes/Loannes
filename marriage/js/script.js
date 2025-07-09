@@ -54,13 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('imageModal');
     const modalImage = document.getElementById('modalImage');
     const closeModal = document.querySelector('.close-modal');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+    let currentImageIndex = 0; // 현재 표시된 이미지의 인덱스
     
-    console.log('Gallery images found:', galleryImages.length);
-    
-    // Open modal when gallery image is clicked
-    galleryImages.forEach(img => {
+    // 갤러리 이미지를 클릭하면 모달 열기
+    galleryImages.forEach((img, index) => {
         img.addEventListener('click', function() {
-            console.log('Image clicked!');
+            currentImageIndex = index; // 클릭된 이미지의 인덱스를 저장
             modal.classList.add('show');
             modalImage.src = this.src;
             modalImage.alt = this.alt;
@@ -72,8 +73,49 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.addEventListener('gesturestart', preventGesture, { passive: false });
         });
     });
+
+    // 다음 이미지를 보여주는 함수
+    function showNextImage() {
+        currentImageIndex = (currentImageIndex + 1) % galleryImages.length; // 다음 인덱스로, 마지막이면 처음으로
+        const nextImage = galleryImages[currentImageIndex];
+        modalImage.src = nextImage.src;
+        modalImage.alt = nextImage.alt;
+    }
+
+    // 이전 이미지를 보여주는 함수
+    function showPrevImage() {
+        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length; // 이전 인덱스로, 처음이면 마지막으로
+        const prevImage = galleryImages[currentImageIndex];
+        modalImage.src = prevImage.src;
+        modalImage.alt = prevImage.alt;
+    }
+
+    // 모달 안의 이미지를 클릭하면 다음 이미지 표시 (기능 제거 또는 주석 처리)
+    /*
+    if (modalImage) {
+        modalImage.addEventListener('click', (event) => {
+            event.stopPropagation(); // 모달 배경 클릭으로 이벤트가 전파되는 것을 막음
+            showNextImage();
+        });
+    }
+    */
+
+    // 네비게이션 버튼 이벤트 리스너
+    if (prevButton) {
+        prevButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            showPrevImage();
+        });
+    }
+
+    if (nextButton) {
+        nextButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            showNextImage();
+        });
+    }
     
-    // Close modal functions
+    // 모달 닫기 관련 기능
     function closeImageModal() {
         modal.classList.remove('show');
         document.body.style.overflow = 'auto';
@@ -84,19 +126,19 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.removeEventListener('gesturestart', preventGesture);
     }
     
-    // Close modal when X button is clicked
+    // 닫기 버튼(X)을 클릭하면 모달 닫기
     if (closeModal) {
         closeModal.addEventListener('click', closeImageModal);
     }
     
-    // Close modal when clicking outside the image
+    // 모달 바깥 영역을 클릭하면 모달 닫기
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
             closeImageModal();
         }
     });
     
-    // Close modal when pressing Escape key
+    // Escape 키를 누르면 모달 닫기
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal.classList.contains('show')) {
             closeImageModal();

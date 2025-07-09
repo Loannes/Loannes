@@ -54,7 +54,7 @@ header {
 
 .date {
     font-family: 'EB Garamond', serif;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     letter-spacing: 2px;
     margin: 0;
     color: #4a4a4a;
@@ -62,7 +62,7 @@ header {
 
 .day {
     font-family: 'EB Garamond', serif;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     letter-spacing: 3px;
     margin-top: 5px;
     color: #5a5a5a;
@@ -95,16 +95,16 @@ footer {
 .names {
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 400;
-    font-size: 1.5rem;
-    margin-bottom: 25px;
+    font-size: 2rem;
+    margin-bottom: 30px;
     letter-spacing: 1px;
 }
 
 .details, .venue {
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 300;
-    font-size: 1rem;
-    line-height: 1.8;
+    font-size: 1.3rem;
+    line-height: 2;
     color: #555;
 }
 
@@ -247,10 +247,9 @@ i {
 
 .poem-line {
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.8;
-    color: #555;
+    font-size: 1.2rem;
+    line-height: 2;
+    color: #444;
     margin: 8px 0;
 }
 
@@ -279,9 +278,8 @@ i {
 .invitation-subtitle {
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 1.3rem;
-    font-weight: 400;
-    color: #333;
-    letter-spacing: 1px;
+    color: #555;
+    margin-top: 10px;
 }
 
 .blessing-section {
@@ -290,10 +288,9 @@ i {
 
 .blessing-text {
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.8;
-    color: #555;
+    font-size: 1.1rem;
+    line-height: 2.2;
+    color: #444;
     margin: 8px 0;
 }
 
@@ -328,12 +325,12 @@ i {
 .parents-info {
     text-align: center;
     margin: 20px 0;
-    width: 70%;
+    width: 90%;
 }
 
 .parents-line {
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 300;
     line-height: 2.5;
     color: #333;
@@ -344,24 +341,24 @@ i {
 }
 
 .parent-names {
-    font-weight: 400;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    font-size: 1.4rem;
     color: #333;
-    text-align: left;
-    flex-basis: 50%;
 }
 
 .relation {
-    font-weight: 300;
-    color: #888;
-    text-align: center;
-    flex-basis: 30%;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.2rem;
+    color: #666;
+    margin: 0 10px;
 }
 
 .child-name {
+    font-family: 'Noto Sans KR', sans-serif;
     font-weight: 500;
+    font-size: 1.4rem;
     color: #333;
-    text-align: right;
-    flex-basis: 20%;
 }
 
 .contact-section {
@@ -413,7 +410,7 @@ i {
 
 .calendar-date {
     font-family: 'EB Garamond', serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 400;
     color: #666;
     margin: 0 0 10px 0;
@@ -422,7 +419,7 @@ i {
 
 .calendar-time {
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1rem;
+    font-size: 1.4rem;
     font-weight: 300;
     color: #888;
     margin: 0;
@@ -554,10 +551,9 @@ i {
 
 .countdown-message p {
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    color: #666;
-    line-height: 1.6;
+    font-size: 1.2rem;
+    color: #555;
+    margin: 0;
 }
 
 .fifth-section {
@@ -731,7 +727,7 @@ i {
 
 .location-title {
     font-family: 'EB Garamond', serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 400;
     letter-spacing: 4px;
     color: #999;
@@ -740,7 +736,7 @@ i {
 
 .location-subtitle {
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 400;
     color: #333;
     margin: 0;
@@ -753,7 +749,7 @@ i {
 
 .venue-name {
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: 500;
     color: #333;
     margin: 0 0 15px 0;
@@ -762,7 +758,7 @@ i {
 
 .venue-address {
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 300;
     color: #666;
     margin: 0;
@@ -886,7 +882,7 @@ i {
 
 .transport-content h3 {
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 500;
     color: #333;
     margin: 0;
@@ -901,12 +897,11 @@ i {
 }
 
 .transport-detail-item p {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 300;
-    color: #666;
-    line-height: 1.6;
+    font-size: 1.1rem;
     margin: 5px 0;
+    color: #555;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
 }
 
 .transport-detail-item p:first-child {
@@ -918,6 +913,8 @@ i {
     color: #333;
     display: inline-block;
     min-width: 80px;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
 }
 
 .eighth-section {
@@ -946,10 +943,9 @@ i {
 
 .information-subtitle {
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: #333;
-    margin: 0;
+    font-size: 1.3rem;
+    color: #555;
+    margin-top: 10px;
 }
 
 .tab-container {
@@ -1015,11 +1011,10 @@ i {
 
 .tab-pane p {
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    color: #666;
-    margin: 8px 0;
+    font-size: 1.1rem;
     line-height: 1.8;
+    color: #444;
+    margin: 5px 0;
 }
 
 .ninth-section {
@@ -1033,10 +1028,9 @@ i {
 .account-title {
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 500;
     color: #333;
-    text-align: center;
-    margin: 20px 0 30px 0;
+    margin-bottom: 30px;
 }
 
 .account-container {
@@ -1056,13 +1050,13 @@ i {
 
 .accordion-header {
     width: 100%;
-    background-color: #f8f9fa;
+    padding: 15px 20px;
+    background-color: #f7f7f7;
     border: none;
-    padding: 20px;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: #333;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 500;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -1101,8 +1095,9 @@ i {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid #f1f3f4;
+    padding: 20px 10px;
+    border-bottom: 1px solid #eee;
+    gap: 15px;
 }
 
 .account-item:last-child {
@@ -1112,46 +1107,44 @@ i {
 .account-info {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    flex: 1;
+    align-items: flex-start;
+    gap: 8px;
+    flex-grow: 1;
 }
 
 .bank-name {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    color: #333;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #444;
 }
 
 .account-number {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1.1rem;
+    color: #555;
+    font-size: 1.2rem;
     font-weight: 500;
-    color: #333;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .account-holder {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 300;
-    color: #666;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #444;
 }
 
 .copy-button {
-    background-color: #f8f9fa;
-    border: 1px solid #e9ecef;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px 15px;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 400;
-    color: #666;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
     cursor: pointer;
+    transition: background-color 0.3s;
     display: flex;
     align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
+    gap: 5px;
+    flex-shrink: 0;
 }
 
 .copy-button:hover {
@@ -1248,11 +1241,10 @@ i {
 
 .final-message p {
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.6;
-    margin: 5px 0;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 .share-buttons {
@@ -1265,14 +1257,12 @@ i {
 }
 
 .share-button {
-    background-color: #fff;
-    border: 2px solid #e9ecef;
+    flex-grow: 1;
+    padding: 15px;
+    border: none;
     border-radius: 12px;
-    padding: 15px 20px;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    color: #333;
+    font-size: 1.1rem;
+    font-weight: 500;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -1335,4 +1325,35 @@ i {
 .copyright strong {
     font-weight: 500;
     color: #666;
+}
+
+/* Modal Navigation Buttons */
+.modal-navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 1060;
+}
+
+.modal-nav-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    width: 60px;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    user-select: none; /* 버튼 텍스트 선택 방지 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
