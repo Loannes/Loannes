@@ -117,7 +117,7 @@ input, select, textarea {
 	body, input, select, textarea {
 		color: rgba(255, 255, 255, 0.55);
 		font-family: Arial, Helvetica, sans-serif;
-		font-size: 16.5pt;
+		font-size: 14pt; /* 16.5pt에서 14pt로 한 단계 축소 */
 		font-weight: normal;
 		line-height: 1.75;
 	}
@@ -187,7 +187,7 @@ input, select, textarea {
 		}
 
 	h1 {
-		font-size: 4.125em; /* 2.75em * 1.5 = 4.125em (150% 증가) */
+		font-size: 3.5em; /* 4.125em에서 3.5em으로 한 단계 축소 */
 	}
 
 		h1.major {
@@ -1991,10 +1991,13 @@ input, select, textarea {
 		border: solid 1px rgba(255, 255, 255, 0.15);
 		background: rgba(255, 255, 255, 0.05);
 		margin: 0 0 2em 0;
+		max-width: 1200px; /* 최대 너비 제한 추가 */
+		margin-left: auto; /* 중앙 정렬 추가 */
+		margin-right: auto; /* 중앙 정렬 추가 */
 	}
 
 		.features section {
-			padding: 3.5em 3em 1em 7em ;
+			padding: 3em 2.5em 1em 6em ; /* padding을 한 단계씩 축소 */
 			width: 50%;
 			border-top: solid 1px rgba(255, 255, 255, 0.15);
 			position: relative;
@@ -2022,8 +2025,8 @@ input, select, textarea {
 				-ms-transform: scale(1);
 				transform: scale(1);
 				position: absolute;
-				left: 3em;
-				top: 3em;
+				left: 2.5em; /* 3em에서 2.5em으로 축소 */
+				top: 2.5em; /* 3em에서 2.5em으로 축소 */
 				opacity: 1;
 			}
 
@@ -2899,6 +2902,8 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
+		max-width: 1200px; /* 최대 너비 제한 추가 */
+		margin: 0 auto; /* 중앙 정렬 추가 */
 	}
 
 		.split > * {
@@ -2906,12 +2911,12 @@ input, select, textarea {
 		}
 
 		.split > :nth-child(2n - 1) {
-			padding-right: 2.5em;
+			padding-right: 2em; /* 2.5em에서 2em으로 축소 */
 			/* border-right: solid 1px rgba(255, 255, 255, 0.15); */ /* 구분선 주석 처리 */
 		}
 
 		.split > :nth-child(2n) {
-			padding-left: 2.5em;
+			padding-left: 2em; /* 2.5em에서 2em으로 축소 */
 		}
 
 		.split.style1 > :nth-child(2n - 1) {
@@ -3206,9 +3211,10 @@ input, select, textarea {
 	}
 
 		.wrapper > .inner {
-			padding: 5em 5em 3em 5em ;
-			max-width: 100%;
+			padding: 4em 4em 2.5em 4em ; /* 5em에서 4em으로 한 단계 축소 */
+			max-width: 1200px; /* 최대 너비 제한 추가 */
 			width: 75em;
+			margin: 0 auto; /* 중앙 정렬 추가 */
 		}
 
 			@media screen and (max-width: 1680px) {
