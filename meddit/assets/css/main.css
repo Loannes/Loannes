@@ -3254,7 +3254,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style2 {
-			background-color: #5052b5;
+			background-color: #cb7ad3;
 		}
 
 		.wrapper.style2-alt {
@@ -3262,7 +3262,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style3 {
-			background-color: #b74e91;
+			background-color: #a562c9;
 		}
 
 		.wrapper.style3-alt {
@@ -3521,6 +3521,17 @@ input, select, textarea {
 		font-size: 0.8em;
 		color: rgba(255, 255, 255, 0.15);
 	}
+
+	#footer .company-info {
+		margin-top: 1em;
+		font-size: 0.8em;
+		color: rgba(255, 255, 255, 0.15); /* 저작권 정보와 동일한 색상으로 변경 */
+		line-height: 1.6;
+	}
+
+		#footer .company-info p {
+			margin: 0.3em 0;
+		}
 
 	#header + #wrapper + #footer > .inner {
 		margin: 0 auto;
