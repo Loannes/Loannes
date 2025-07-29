@@ -1,99 +1,219 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>리디렉션 중...</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html, body {
-            height: 100%;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-        
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f8f9fa;
-        }
-        
-        .container {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 90%;
-        }
-        
-        #message {
-            font-size: 1.1rem;
-            color: #333;
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-        
-        p {
-            color: #666;
-            line-height: 1.5;
-        }
-        
-        #redirect-link {
-            color: #007bff;
-            text-decoration: none;
-        }
-        
-        #redirect-link:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <p id="message">리디렉션 준비 중...</p>
-        <p>
-            만약 페이지가 자동으로 이동하지 않으면 <a id="redirect-link" href="#">여기를 클릭해주세요</a>.
-        </p>
-    </div>
-    <script>
-        (async () => {
-            // const apiEndpoint = 'http://localhost:8000/api/redirect-log'; // 나중에 실제 주소로 변경하세요.
-            const apiEndpoint = 'https://imgs.loannes.com/api/redirect-log'; // 나중에 실제 주소로 변경하세요.
-            const urlParams = new URLSearchParams(window.location.search);
-            const sourceUrl = urlParams.get('source_url');
-            const destinationUrl = urlParams.get('destination_url') || 'https://www.naver.com';
-            // https://link.inpock.co.kr/meddit
-            document.getElementById('message').textContent = `잠시 후 ${destinationUrl}(으)로 이동합니다.`;
-            document.getElementById('redirect-link').href = destinationUrl;
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Hyperspace by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-            const logRedirect = async () => {
-                const data = {
-                    source_url: sourceUrl,
-                    destination_url: destinationUrl
-                };
-                
-                try {
-                    await fetch(apiEndpoint, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded',
-                        },
-                        body: new URLSearchParams(data)
-                    });
-                } catch (error) {
-                    console.error('리다이렉트 로그 기록 실패:', error);
-                }
-            };
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Welcome</a></li>
+							<li><a href="#one">Who we are</a></li>
+							<li><a href="#two">What we do</a></li>
+							<li><a href="#three">Contact us</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
 
-            await logRedirect();
-            window.location.href = destinationUrl;
-        })();
-    </script>
-</body>
-</html> 
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>MEDDIT</h1>
+							<p>
+								MEDDIT는 모든 병원이 환자의 니즈를 정확히 이해하고, 그에 맞는 서비스를 제공할 수 있도록 돕기 위해 설립된 <a href="#">병원 마케팅 전문 회사</a>입니다.<br /><br />
+
+								<strong>AI 기반의 대규모 병원 데이터 처리 기술과, 환자의 행동과 감성을 반영한 차별화된 콘텐츠 제작 역량</strong>을 바탕으로,
+								병원의 지속 가능한 성장과 환자 중심 마케팅을 함께 실현해 나가는 전략적 파트너입니다.
+							</p>
+							<ul class="actions">
+								<li><a href="#one" class="button scrolly">Learn more</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a href="#" class="image"><img src="images/main-one-1.jpg" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>AI를 이용한 대규모 병원 데이터 처리 기술</h2>
+									<p>MEDDIT는 자체 보유한 대규모 데이터 처리 기술로 병원의 데이터를 분석하여 해당 상권의 병에게 필요한 전략적으로 제공합니다..</p>
+									<ul class="actions">
+										<li><a href="generic.html" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="images/main-one-2.jpg" alt="" data-position="top center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>환자의 행동과 감성을 반영한 차별화된 콘텐츠 제작</h2>
+									<p>MEDDIT는 환자의 행동과 감성을 반영한 차별화된 콘텐츠 제작 역량으로 병원의 마케팅 효과를 극대화합니다.</p>
+									<ul class="actions">
+										<li><a href="generic.html" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<!-- <section>
+							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Ultricies aliquam</h2>
+									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+									<ul class="actions">
+										<li><a href="generic.html" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section> -->
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>What we do</h2>
+							<p>MEDDIT는 대규모 데이터 분석을 기반으로, 병원이 환자에게 <strong>"진짜 필요한 병원"</strong>이 될 수 있도록 전략을 설계합니다.
+
+								단순한 홍보를 넘어, 환자의 행동과 감정을 읽어내는 콘텐츠 기획력으로 병원의 강점을 정확히 전달하고, 환자가 스스로 선택하게 만드는 마케팅 효과를 실현합니다.</p>
+							<div class="features">
+								<section>
+									<span class="icon major fa-gem"></span>
+									<h3>병원의 지속 가능한 성장을 도와드립니다.</h3>
+									<p>MEDDIT는 병원의 지속 가능한 성장을 위한 전략 파트너입니다. 파트너 병원이 함께 성장 할 수 있도록 노력합니다.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-code"></span>
+									<h3>감이 아닌 데이터를 이용합니다.</h3>
+									<p>MEDDIT는 감에 의존하지 않습니다.
+										대규모 의료 데이터와 분석 기술을 바탕으로
+										병원마다 맞춤형 성장 전략을 설계합니다.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-lock"></span>
+									<h3>데이터를 기반으로 병원을 진단합니다.</h3>
+									<p>MEDDIT는 대규모 의료 데이터를 분석하여 병원의 강점과 약점을 파악합니다.
+										이를 통해 병원의 성장 가능성을 정확히 파악하고, 필요한 개선 사항을 제시합니다.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-cog"></span>
+									<h3>해당 병원에 가장 필요한 환자를 찾습니다.</h3>
+									<p>MEDDIT는 병원의 강점을 활용하여 해당 병원에 가장 필요한 환자를 찾습니다.
+										이를 통해 병원의 성장 가능성을 정확히 파악하고, 필요한 개선 사항을 제시합니다.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-desktop"></span>
+									<h3>환자의 행동과 감정을 읽어내는 콘텐츠를 만듭니다.</h3>
+									<p>MEDDIT는 환자의 행동과 감정을 분석하여 병원의 강점을 활용하여 환자가 선택하게 만드는 콘텐츠를 만듭니다.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-link"></span>
+									<h3>환자가 선택하게 만드는 마케팅 효과를 실현합니다.</h3>
+									<p>MEDDIT는 환자의 행동과 감정을 분석하여 병원의 강점을 활용하여 환자가 선택하게 만드는 콘텐츠를 만듭니다.</p>
+								</section>
+							</div>
+							<ul class="actions">
+								<li><a href="generic.html" class="button">Learn more</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>CONTACT US</h2>
+							<p>MEDDIT는 함께 성장하기 원하는 병원의 연락을 기다리고 있습니다. 아래 방법 중 하나를 선택해서 연락주시면 빠르게 답변 드리도록 하겠습니다.</p>
+							<div class="split style1">
+								<!-- <section>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="name">Name</label>
+												<input type="text" name="name" id="name" />
+											</div>
+											<div class="field half">
+												<label for="email">Email</label>
+												<input type="text" name="email" id="email" />
+											</div>
+											<div class="field">
+												<label for="message">Message</label>
+												<textarea name="message" id="message" rows="5"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><a href="" class="button submit">Send Message</a></li>
+										</ul>
+									</form>
+								</section> -->
+								<section>
+									<ul class="contact">
+										<li>
+											<h3>Address</h3>
+											<span>12345 Somewhere Road #654<br />
+											Nashville, TN 00000-0000<br />
+											USA</span>
+										</li>
+										<li>
+											<h3>Email</h3>
+											<a href="#">user@untitled.tld</a>
+										</li>
+										<li>
+											<h3>Phone</h3>
+											<span>(000) 000-0000</span>
+										</li>
+										<li>
+											<h3>Social</h3>
+											<ul class="icons">
+												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+											</ul>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; 2025 MEDDIT. Reimagining Hospital Marketing. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
