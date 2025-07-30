@@ -187,11 +187,11 @@ input, select, textarea {
 		}
 
 	h1 {
-		font-size: 3.5em; /* 4.125em에서 3.5em으로 한 단계 축소 */
+		font-size: 2.45em; /* 3.5em에서 30% 축소 (3.5 * 0.7 = 2.45) */
 	}
 
 		h1.major {
-			margin: 0 0 1.3em 0;
+			margin: 0 0 0.65em 0; /* 1.3em에서 반으로 축소 */
 			position: relative;
 			padding-bottom: 0.35em;
 		}
@@ -237,7 +237,7 @@ input, select, textarea {
 	@media screen and (max-width: 736px) {
 
 		h1 {
-			font-size: 3em; /* 2em * 1.5 = 3em (150% 증가) */
+			font-size: 2.1em; /* 3em에서 30% 축소 (3 * 0.7 = 2.1) */
 		}
 
 		h2 {
@@ -1838,13 +1838,13 @@ input, select, textarea {
 		color: #ffffff !important;
 		cursor: pointer;
 		display: inline-block;
-		font-size: 0.6em;
+		font-size: 0.9em;
 		font-weight: bold;
-		height: calc(4.75em + 2px);
+		height: calc(2.75em + 2px);
 		letter-spacing: 0.25em;
-		line-height: 4.75em;
+		line-height: 2.75em;
 		outline: 0;
-		padding: 0 3.75em;
+		padding: 0 1.75em;
 		position: relative;
 		text-align: center;
 		text-decoration: none;
@@ -3254,7 +3254,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style2 {
-			background-color: #cb7ad3;
+			background-color: #8657c0;
 		}
 
 		.wrapper.style2-alt {
@@ -3262,7 +3262,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style3 {
-			background-color: #a562c9;
+			background-color: #67358c;
 		}
 
 		.wrapper.style3-alt {
@@ -3519,13 +3519,13 @@ input, select, textarea {
 
 	#footer > .inner .menu {
 		font-size: 0.8em;
-		color: rgba(255, 255, 255, 0.15);
+		color: white;
 	}
 
 	#footer .company-info {
 		margin-top: 1em;
 		font-size: 0.8em;
-		color: rgba(255, 255, 255, 0.15); /* 저작권 정보와 동일한 색상으로 변경 */
+		color: white; /* 풋터 텍스트를 흰색으로 변경 */
 		line-height: 1.6;
 	}
 
