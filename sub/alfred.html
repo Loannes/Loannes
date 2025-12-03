@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<title>Loannes.com</title>
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="../favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon/favicon.ico" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,800" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel= "stylesheet" type="text/css" href="../style.css">
+
+
+
+  <style>
+
+  .youtube { /* continer (responsive) */
+    position: relative;
+    cursor: pointer;
+    background: #ccc no-repeat center center / cover;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0px;
+    clear:both;
+  }
+
+  .youtube::before { /* play bubble */
+    content: '';
+    background: rgba(255, 255, 255, .6);
+    height: 80px;
+    width: 80px;
+    display:block;
+    margin: -40px 0 0 -40px;
+    border-radius: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0 0 20px 3px rgba(51, 51, 51, .8);
+    transition: all .1s ease;
+    z-index:1;
+  }
+
+  .youtube:hover::before { /* play bubble hover */
+    background: rgba(238, 238, 238, .8);
+    box-shadow: 0 0 10px 3px rgba(51, 51, 51, .8);
+    width: 100px;
+    height: 100px;
+    margin: -50px 0 0 -50px;
+  }
+
+  .youtube::after { /* Play Triangle */
+    content: '';
+    width: 0;
+    height: 0;
+    line-height:0px;
+    display:block;
+    border-style: solid;
+    border-width: 20px 0 20px 40px;
+    margin: -20px 0 0 -15px;
+    border-color: transparent transparent transparent #333;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 0;
+    width: 0;
+    z-index:2;
+  }
+  .youtube iframe{ /* youtube embed (responsive) */
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:3;
+  }
+  /* END Fast & Agile YouTube Embed by Schoberg.net */
+
+  /*ignore this*/
+  body{text-align:center;font-family:arial;color:#333;}
+
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+        $(document).ready(function(){
+           $("#footer").load("../footer.html")
+        });
+  </script>
+</head>
+<body>
+
+<!-- Content - alfred -->
+<img class="w3-image w3-hide-medium w3-hide-small" src="../image/alfred-copy.png">
+<img class="w3-image w3-hide-large" src="../image/alfred-copy-mobile.png">
+
+<div style="padding:20px 20px;">
+  <p class="content">
+    <b>가계부</b> 앱을 사용할 때의 가장 큰 <b>불편</b>은 무엇일까요? 바로 <b>데이터의 입력</b>입니다. 지출 내용과 금액과 날짜를 직접 입력하는 것은 매우 불편한 작업입니다.
+    이러한 문제점을 해결하기 위해 <b>알프레드</b>가 만들어졌습니다. <b>알프레드</b>는 사용자의 입력을 최소화하는 것을 목표로 합니다. 바로 똑똑한 지능형 가계부 앱이죠.
+  </p>
+
+  <p class="content">
+    What are the biggest challenges to using the budget app?  <b>It is to input data.</b> It is very inconvenient to enter your expenses, amounts and dates directly. <b>Alfred was created to solve these problems.</b> Alfred aims to minimize user input. It's an intelligent smart household app.
+  </p>
+</div>
+
+<div class="wrapper youtube">
+    <div class="h_iframe">
+        <iframe src="https://www.youtube.com/embed/TzuVXDihBxs" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+<br>&nbsp;<br>
+<h1 class="w3-hide-medium w3-hide-small app-content-desktop">Simple</h1>
+<h5 class="w3-hide-large app-title-mobile" style="white-space:nowrap">Simple</h5>
+
+<div style="padding:20px 20px;">
+  <p class="content">
+    메세지에서 <b>복사 & 붙여넣기</b>, 이게 끝이에요! <b>알프레드</b>는 메세지의 형식을 <b>분석</b>해서 필요한 데이터를 <b>인식</b>해서 적용합니다.
+    또 이전에 <b>동일한 사용 기록이 있을 경우 카테고리도 자동으로 설정</b>해 줍니다! <b>복사 & 붙여넣기, 이게 끝이에요! 참 쉽죠?</b>
+  </p>
+
+  <p class="content">
+    <b>Copy & paste</b> from text message, this is all! <b>Alfred</b> analyzes the format of the text message, <b>finds the bank and recognizes and applies the necessary data.</b>
+
+     It also automatically sets categories if you have the same history. <b>Copy & paste, this is the end! It's easy, is not it?</b>
+  </p>
+
+</div>
+
+<br>&nbsp;<br>&nbsp;<br>
+<h1 class="w3-hide-medium w3-hide-small app-content-desktop">은행/카드 요청하기</h1>
+<h5 class="w3-hide-large app-title-mobile" style="white-space:nowrap">은행/카드 요청하기</h5>
+
+<h1 class="w3-hide-medium w3-hide-small app-content-sub-desktop">Request a Bank&Card</h1>
+<h5 class="w3-hide-large app-subtitle-mobile" style="white-space:nowrap">Request a Bank&Card</h5>
+
+
+<div style="padding:20px 20px;">
+  <p class="content">
+    혹시 사용하시는 은행에서 <b>출금 메세지</b>를 받고 있나요? 그렇다면 <b>알프레드</b>에서 자동 입력 기능을 사용하실 수 있습니다.
+    &nbsp; &nbsp;은행에서 전송되는 <b>출금 메세지를 복사해서 메일</b>로 보내주세요. 정확한 기능 구현을 위해서는 <b>3개 이상의 문자 메세지가 필요</b>합니다. <b>각각 다른</b> 항목의 메세지 <b>3개 이상을 아래의 메일</b>로 보내주세요.
+  </p>
+
+  <p class="content">
+    Do you receive a <b>usage notification message</b> from your bank? If so, you can use the auto-fill feature in <b>Alfred</b>.
+    &nbsp; &nbsp;Please <b>copy and mail the usage history message sent</b> from the bank. More than <b>three</b> text messages are required to get enough data. Please send <b>three</b> or more messages of different items to the following mail.
+  </p>
+</div>
+
+<div class="w3-display-container w3-content w3-center" style="padding-bottom:30px;">
+    <a class="link" href="mailto:loannes@me.com">loannes@me.com</a>
+</div>
+
+<div style="color: #777;background-color:#f2f2f2;text-align:center;padding:40px 40px;text-align: justify;">
+
+  <div class="app-subtitle-mobile">지원하는 은행&카드</div>
+  <div class="app-subtitle-mobile">Supported Bank&Card</div>
+
+  <br>
+
+  <center>
+    <table style="border:0;" class="content">
+      <tr><td>한국</td><td>&nbsp;&nbsp;</td><td>KB국민은행 체크카드</td></tr>
+      <tr><td>한국</td><td>&nbsp;&nbsp;</td><td>KB국민은행 신용카드</td></tr>
+      <tr><td>한국</td><td>&nbsp;&nbsp;</td><td>신한은행 신용카드</td></tr>
+      <tr><td>한국</td><td>&nbsp;&nbsp;</td><td>신한은행 체크카드</td></tr>
+      <tr><td>한국</td><td>&nbsp;&nbsp;</td><td>현대M카드</td></tr>
+      <tr><td>한국</td><td>&nbsp;&nbsp;</td><td>우리은행 신용카드</td></tr>
+      <tr><td>한국</td><td>&nbsp;&nbsp;</td><td>우리은행 신용카드 - 해외</td></tr>
+      <tr><td>한국</td><td>&nbsp;&nbsp;</td><td>카카오뱅크</td></tr>
+
+      <tr><td colspan="3" style="text-align:center;">.</td></tr>
+      <tr><td colspan="3" style="text-align:center;">.</td></tr>
+      <tr><td colspan="3" style="text-align:center;">.</td></tr>
+      <tr><td colspan="3" style="text-align:center;">업데이트 예정입니다.<br>To be updated</td></tr>
+    </table>
+  </center>
+</div>
+
+<div style="background-color:#fafafa;margin-top:-20px;">
+  <h1 class="app-content-sub-desktop">Download</h1>
+  <div class="w3-display-container w3-content w3-center" style="margin-top:-20px;padding-bottom:20px;">
+    <a class="link" href="https://itunes.apple.com/us/app/alfred-account-book/id1239660348?l=ko&ls=1&mt=8">US</a><br>
+    <a class="link" href="https://itunes.apple.com/kr/app/%EC%95%8C%ED%94%84%EB%A0%88%EB%93%9C-%EB%B3%B5%EC%82%AC-%EB%B6%99%EC%97%AC%EB%84%A3%EA%B8%B0-%EA%B0%80%EA%B3%84%EB%B6%80-%EC%96%B4%ED%94%8C/id1239660348?mt=8">대한민국</a>
+  </div>
+</div>
+
+<div style="margin-top:100px;margin-bottom:70px;">
+  <div class="w3-display-container w3-content w3-center" style="margin-top:-20px;padding-bottom:20px;">
+    <a class="app-content-sub-desktop" href="../index.html" style="color: #2c71c3;">Home</a>
+  </div>
+</div>
+
+<div id="footer"></div>
+
+</body>
+</html>

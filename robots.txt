@@ -1,0 +1,17 @@
+User-agent: *
+Disallow: / 
+Disallow: /marriage/
+Disallow: /marriage/img/
+
+# Explicitly block all bots from marriage content
+User-agent: Googlebot
+Disallow: /marriage/
+
+User-agent: Bingbot
+Disallow: /marriage/
+
+User-agent: NaverBot
+Disallow: /marriage/
+
+User-agent: DaumBot
+Disallow: /marriage/ 

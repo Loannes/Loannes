@@ -1,0 +1,694 @@
+/* 전역 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    background-color: #000;
+    color: #00ff00;
+    overflow: hidden;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 언어 전환 버튼 */
+.language-toggle {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    background: rgba(0, 255, 0, 0.1);
+    border: 2px solid #00ff00;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+}
+
+.language-toggle:hover {
+    background: rgba(0, 255, 0, 0.2);
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.5);
+    transform: scale(1.1);
+}
+
+.language-toggle:active {
+    transform: scale(0.95);
+}
+
+/* 화면 전환 */
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    transition: opacity 0.3s ease;
+}
+
+.screen.active {
+    display: flex;
+}
+
+/* 헤더-바디-풋터 구조 */
+.screen-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: max(20px, 3vh) 5vw;
+    text-align: center;
+    z-index: 10;
+}
+
+.screen-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+/* 풋터 제거됨 - 모든 내용이 바디로 이동 */
+
+/* 반응형 폰트 크기 */
+.container {
+    width: 100%;
+    max-width: 390px;
+    margin: 0 auto;
+}
+
+/* 설정 화면 */
+#setup-screen {
+    background-color: #000;
+    transition: background 0.5s ease;
+}
+
+#setup-screen.legend-mode {
+    background: linear-gradient(135deg, #ff0000 0%, #ff4500 25%, #ff8c00 50%, #ff4500 75%, #ff0000 100%);
+    background-size: 200% 200%;
+    animation: epicBackground 4s ease infinite, legendPulse 2s ease-in-out infinite;
+    box-shadow: inset 0 0 100px rgba(255, 69, 0, 0.5);
+}
+
+/* 2손가락 모드 (중급자) */
+#setup-screen.intermediate-mode {
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(255, 69, 0, 0.05) 0%, transparent 60%),
+        linear-gradient(135deg, #0a0a0a 0%, #1a0a00 50%, #0a0a0a 100%);
+    background-size: 100% 100%, 200% 200%;
+    animation: epicBackground 6s ease infinite;
+    box-shadow: inset 0 0 50px rgba(255, 69, 0, 0.15);
+}
+
+@keyframes epicBackground {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.title {
+    font-size: clamp(20px, 5vw, 28px);
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    text-shadow: 0 0 10px #00ff00;
+    transition: all 0.5s ease;
+}
+
+#setup-screen.legend-mode .title {
+    color: #ffff00;
+    font-size: clamp(22px, 5.5vw, 32px);
+    text-shadow: 
+        0 0 10px #ff0000,
+        0 0 20px #ff4500,
+        0 0 40px #ff8c00,
+        0 0 80px #ff0000,
+        0 0 120px #ff4500;
+    animation: legendGlow 1s ease-in-out infinite, titleShake 0.5s ease-in-out infinite;
+}
+
+#setup-screen.intermediate-mode .title {
+    color: #ff6600;
+    font-size: clamp(21px, 5.2vw, 30px);
+    text-shadow: 
+        0 0 8px #ff4500,
+        0 0 15px #ff6600,
+        0 0 25px rgba(255, 69, 0, 0.3);
+    animation: legendGlow 3s ease-in-out infinite;
+}
+
+@keyframes legendGlow {
+    0%, 100% {
+        text-shadow: 
+            0 0 10px #ff0000,
+            0 0 20px #ff4500,
+            0 0 40px #ff8c00,
+            0 0 80px #ff0000;
+        filter: brightness(1);
+    }
+    50% {
+        text-shadow: 
+            0 0 20px #ff0000,
+            0 0 40px #ff4500,
+            0 0 80px #ff8c00,
+            0 0 120px #ff0000,
+            0 0 160px #ff4500;
+        filter: brightness(1.5);
+    }
+}
+
+@keyframes titleShake {
+    0%, 100% { transform: translateY(0px); }
+    25% { transform: translateY(-2px); }
+    75% { transform: translateY(2px); }
+}
+
+.setting-group {
+    margin-bottom: max(15px, 2vh);
+}
+
+.setting-label {
+    display: block;
+    font-size: clamp(12px, 3vw, 16px);
+    margin-bottom: max(8px, 1vh);
+    font-weight: 600;
+}
+
+/* 시간 선택 셀렉트 박스 */
+.time-select {
+    width: 100%;
+    max-width: min(80vw, 280px);
+    padding: clamp(12px, 2.5vh, 16px);
+    font-size: clamp(14px, 3.5vw, 18px);
+    font-weight: 600;
+    background-color: rgba(0, 255, 0, 0.1);
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2300ff00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px;
+    padding-right: 45px;
+}
+
+.time-select:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+#setup-screen.legend-mode .time-select {
+    background-color: rgba(255, 69, 0, 0.2);
+    border-color: #ff4500;
+    color: #ffff00;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.5);
+    font-weight: 700;
+}
+
+#setup-screen.legend-mode .setting-label {
+    color: #ffff00;
+    text-shadow: 0 0 10px #ff4500;
+}
+
+#setup-screen.intermediate-mode .time-select {
+    background-color: rgba(255, 69, 0, 0.08);
+    border-color: #ff4500;
+    color: #ff6600;
+    box-shadow: 0 0 8px rgba(255, 69, 0, 0.2);
+}
+
+#setup-screen.intermediate-mode .setting-label {
+    color: #ff6600;
+    text-shadow: 0 0 5px #ff4500;
+}
+
+.time-select option {
+    background-color: #000;
+    color: #00ff00;
+    font-size: 18px;
+    padding: 10px;
+}
+
+/* 버튼 */
+.main-button {
+    width: 100%;
+    max-width: min(80vw, 280px);
+    padding: clamp(14px, 3vh, 18px);
+    font-size: clamp(16px, 4vw, 22px);
+    font-weight: 700;
+    background-color: #00ff00;
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: max(40px, 6vh) auto 0;
+    display: block;
+}
+
+.main-button:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+}
+
+#setup-screen.legend-mode .main-button {
+    background: linear-gradient(135deg, #ff0000 0%, #ff8c00 50%, #ff0000 100%);
+    background-size: 200% 200%;
+    color: #ffff00;
+    font-size: clamp(16px, 4vw, 22px);
+    font-weight: 900;
+    text-shadow: 0 0 10px #000;
+    box-shadow: 
+        0 0 30px rgba(255, 69, 0, 0.8),
+        0 0 60px rgba(255, 140, 0, 0.5);
+    border: 3px solid #ffff00;
+    animation: buttonPulse 1s ease-in-out infinite;
+}
+
+#setup-screen.intermediate-mode .main-button {
+    background: linear-gradient(135deg, #ff4500 0%, #ff6600 50%, #ff4500 100%);
+    background-size: 200% 200%;
+    color: #000;
+    font-size: clamp(15px, 3.8vw, 19px);
+    font-weight: 700;
+    box-shadow: 
+        0 0 15px rgba(255, 69, 0, 0.4),
+        0 0 25px rgba(255, 100, 0, 0.3),
+        0 0 35px rgba(255, 140, 0, 0.1);
+    border: 2px solid #ff6600;
+    animation: buttonPulse 2s ease-in-out infinite;
+}
+
+@keyframes buttonPulse {
+    0%, 100% {
+        background-position: 0% 50%;
+        box-shadow: 
+            0 0 30px rgba(255, 69, 0, 0.8),
+            0 0 60px rgba(255, 140, 0, 0.5);
+    }
+    50% {
+        background-position: 100% 50%;
+        box-shadow: 
+            0 0 50px rgba(255, 69, 0, 1),
+            0 0 100px rgba(255, 140, 0, 0.8);
+    }
+}
+
+/* 트레이닝 화면 */
+#training-screen {
+    background-color: #cc0000;
+    transition: background 0.5s ease;
+}
+
+#training-screen .screen-body {
+    justify-content: center;
+}
+
+#training-screen.legend-mode {
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 0, 0.3) 0%, transparent 50%),
+        linear-gradient(135deg, #ff0000 0%, #ff4500 15%, #ff8c00 30%, #ff0000 50%, #ff4500 70%, #ff8c00 85%, #ff0000 100%);
+    background-size: 100% 100%, 300% 300%;
+    animation: fireGradient 1.5s ease infinite, epicPulse 1s ease-in-out infinite;
+    box-shadow: 
+        inset 0 0 150px rgba(255, 100, 0, 0.8),
+        0 0 100px rgba(255, 69, 0, 0.5);
+}
+
+#training-screen.intermediate-mode {
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(255, 69, 0, 0.1) 0%, transparent 60%),
+        linear-gradient(135deg, #cc0000 0%, #dd3300 50%, #cc0000 100%);
+    background-size: 100% 100%, 200% 200%;
+    animation: fireGradient 3s ease infinite;
+    box-shadow: inset 0 0 60px rgba(255, 69, 0, 0.2);
+}
+
+@keyframes epicPulse {
+    0%, 100% { 
+        transform: scale(1);
+        filter: brightness(1.2) contrast(1.3);
+    }
+    50% { 
+        transform: scale(1.02);
+        filter: brightness(1.5) contrast(1.5);
+    }
+}
+
+/* 휴식 화면 */
+#rest-screen {
+    background-color: #0066cc;
+    transition: background 0.5s ease;
+}
+
+#rest-screen .screen-body {
+    justify-content: center;
+}
+
+#rest-screen.legend-mode {
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(255, 200, 0, 0.4) 0%, transparent 60%),
+        radial-gradient(circle at 70% 70%, rgba(255, 100, 0, 0.4) 0%, transparent 60%),
+        linear-gradient(135deg, #ff6600 0%, #ff8c00 25%, #ffaa00 50%, #ff8c00 75%, #ff6600 100%);
+    background-size: 100% 100%, 100% 100%, 250% 250%;
+    animation: epicBackground 3s ease infinite, legendPulse 1.5s ease-in-out infinite;
+    box-shadow: inset 0 0 120px rgba(255, 140, 0, 0.7);
+}
+
+#rest-screen.intermediate-mode {
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(255, 69, 0, 0.08) 0%, transparent 60%),
+        linear-gradient(135deg, #004488 0%, #0055aa 50%, #004488 100%);
+    background-size: 100% 100%, 200% 200%;
+    animation: epicBackground 4s ease infinite;
+    box-shadow: inset 0 0 40px rgba(255, 69, 0, 0.15);
+}
+
+/* 트레이닝 정보 표시 */
+.training-info {
+    font-size: clamp(11px, 2.5vw, 16px);
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: max(8px, 1vh);
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 라운드 표시 */
+.round-display {
+    font-size: clamp(16px, 4vw, 22px);
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0;
+    opacity: 0.9;
+}
+
+.round-display span {
+    font-size: clamp(20px, 5vw, 28px);
+    font-weight: 700;
+}
+
+/* 타이머 표시 */
+.timer-display {
+    font-size: clamp(80px, 25vw, 160px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: max(15px, 2vh);
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    font-variant-numeric: tabular-nums;
+}
+
+.mode-label {
+    font-size: clamp(16px, 4.5vw, 26px);
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* 종료 버튼 */
+.stop-button {
+    width: 100%;
+    max-width: min(80vw, 280px);
+    padding: clamp(12px, 2.5vh, 16px);
+    font-size: clamp(13px, 3.2vw, 18px);
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: max(40px, 6vh);
+}
+
+.stop-button:active {
+    transform: scale(0.95);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* 종료 화면 */
+#finish-screen {
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+    transition: background 0.5s ease;
+}
+
+#finish-screen.legend-mode {
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.3) 0%, transparent 70%),
+        linear-gradient(135deg, #ff0000 0%, #ff4500 20%, #ff8c00 40%, #ffaa00 50%, #ff8c00 60%, #ff4500 80%, #ff0000 100%);
+    background-size: 100% 100%, 300% 300%;
+    animation: epicBackground 4s ease infinite, legendPulse 2s ease-in-out infinite;
+    box-shadow: 
+        inset 0 0 200px rgba(255, 140, 0, 0.6),
+        0 0 150px rgba(255, 69, 0, 0.8);
+}
+
+#finish-screen.intermediate-mode {
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(255, 69, 0, 0.1) 0%, transparent 70%),
+        linear-gradient(135deg, #0a0a0a 0%, #1a0a00 25%, #2a1500 50%, #1a0a00 75%, #0a0a0a 100%);
+    background-size: 100% 100%, 200% 200%;
+    animation: epicBackground 5s ease infinite;
+    box-shadow: 
+        inset 0 0 80px rgba(255, 69, 0, 0.2),
+        0 0 40px rgba(255, 69, 0, 0.3);
+}
+
+/* 최강자 애니메이션 */
+@keyframes fireGradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes legendPulse {
+    0%, 100% {
+        filter: brightness(1.3) saturate(1.5);
+    }
+    50% {
+        filter: brightness(1.8) saturate(2);
+    }
+}
+
+.finish-emoji {
+    font-size: clamp(50px, 12vw, 80px);
+    margin-bottom: max(8px, 1.5vh);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+#finish-screen.legend-mode .finish-emoji {
+    animation: legendSpin 1s ease-in-out infinite, epicBounce 0.5s ease-in-out infinite;
+    filter: 
+        drop-shadow(0 0 30px #ff0000)
+        drop-shadow(0 0 60px #ff4500)
+        drop-shadow(0 0 90px #ff8c00);
+    font-size: clamp(60px, 15vw, 100px);
+}
+
+#finish-screen.intermediate-mode .finish-emoji {
+    filter: drop-shadow(0 0 10px #ff4500);
+}
+
+@keyframes legendSpin {
+    0%, 100% {
+        transform: scale(1) rotate(-5deg);
+    }
+    50% {
+        transform: scale(1.3) rotate(5deg);
+    }
+}
+
+@keyframes epicBounce {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.finish-title {
+    font-size: clamp(28px, 7vw, 48px);
+    font-weight: 700;
+    margin-bottom: max(15px, 3vh);
+    text-shadow: 0 0 20px #00ff00;
+    letter-spacing: 2px;
+    transition: all 0.5s ease;
+}
+
+#finish-screen.legend-mode .finish-title {
+    color: #ffff00;
+    font-size: clamp(36px, 9vw, 64px);
+    text-shadow: 
+        0 0 20px #ff0000,
+        0 0 40px #ff4500,
+        0 0 80px #ff8c00,
+        0 0 120px #ff0000,
+        0 0 160px #ff4500,
+        0 0 200px #ff8c00;
+    animation: legendGlow 1s ease-in-out infinite, titleShake 0.3s ease-in-out infinite;
+    transform-origin: center;
+}
+
+#finish-screen.intermediate-mode .finish-title {
+    color: #ff6600;
+    text-shadow: 
+        0 0 10px #ff4500,
+        0 0 20px #ff6600;
+}
+
+.finish-subtitle {
+    font-size: clamp(11px, 2.8vw, 16px);
+    color: #00ff00;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: max(20px, 4vh);
+}
+
+.finish-card {
+    background: rgba(0, 255, 0, 0.05);
+    border: 2px solid #00ff00;
+    border-radius: 16px;
+    padding: clamp(16px, 3vh, 24px);
+    width: 100%;
+    max-width: min(85vw, 340px);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.2);
+}
+
+.finish-training-info {
+    text-align: center;
+    margin-bottom: max(12px, 2vh);
+}
+
+.finish-label {
+    font-size: clamp(9px, 2.2vw, 13px);
+    color: #00ff00;
+    opacity: 0.6;
+    margin-bottom: max(6px, 1vh);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.finish-training-name {
+    font-size: clamp(22px, 5.5vw, 36px);
+    font-weight: 700;
+    color: #00ff00;
+    margin-bottom: max(4px, 0.8vh);
+    text-shadow: 0 0 15px #00ff00;
+}
+
+.finish-training-level {
+    font-size: clamp(16px, 4vw, 24px);
+    color: #00ff00;
+    opacity: 0.8;
+}
+
+.finish-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #00ff00 50%, transparent 100%);
+    margin: max(12px, 2vh) 0;
+    opacity: 0.3;
+}
+
+.finish-stats {
+    display: flex;
+    justify-content: center;
+    gap: max(15px, 3vw);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-icon {
+    font-size: clamp(24px, 6vw, 40px);
+    margin-bottom: max(4px, 0.8vh);
+}
+
+.stat-label {
+    font-size: clamp(9px, 2.2vw, 14px);
+    color: #00ff00;
+    opacity: 0.7;
+    margin-bottom: max(4px, 0.8vh);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    font-size: clamp(32px, 9vw, 56px);
+    font-weight: 700;
+    color: #00ff00;
+    text-shadow: 0 0 20px #00ff00;
+    line-height: 1;
+}
+
+/* 반응형 조정 (작은 화면) */
+@media (max-height: 600px) {
+    .screen-header {
+        padding: max(15px, 2vh) 5vw;
+    }
+    
+    .screen-body {
+        top: 45%;
+    }
+}
+
+/* 아이폰 세로 모드 최적화 */
+@media (max-width: 430px) and (orientation: portrait) {
+    .screen-header {
+        padding: max(15px, 2vh) 4vw;
+    }
+    
+    .screen-body {
+        padding: 0 4vw;
+    }
+    
+    .time-select {
+        max-width: min(85vw, 300px);
+    }
+    
+    .main-button {
+        max-width: min(85vw, 300px);
+    }
+}
+

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<title>Loannes.com</title>
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="../favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon/favicon.ico" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,800" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel= "stylesheet" type="text/css" href="../style.css">
+
+
+
+  <style>
+
+  .youtube { /* continer (responsive) */
+    position: relative;
+    cursor: pointer;
+    background: #ccc no-repeat center center / cover;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0px;
+    clear:both;
+  }
+
+  .youtube::before { /* play bubble */
+    content: '';
+    background: rgba(255, 255, 255, .6);
+    height: 80px;
+    width: 80px;
+    display:block;
+    margin: -40px 0 0 -40px;
+    border-radius: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0 0 20px 3px rgba(51, 51, 51, .8);
+    transition: all .1s ease;
+    z-index:1;
+  }
+
+  .youtube:hover::before { /* play bubble hover */
+    background: rgba(238, 238, 238, .8);
+    box-shadow: 0 0 10px 3px rgba(51, 51, 51, .8);
+    width: 100px;
+    height: 100px;
+    margin: -50px 0 0 -50px;
+  }
+
+  .youtube::after { /* Play Triangle */
+    content: '';
+    width: 0;
+    height: 0;
+    line-height:0px;
+    display:block;
+    border-style: solid;
+    border-width: 20px 0 20px 40px;
+    margin: -20px 0 0 -15px;
+    border-color: transparent transparent transparent #333;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 0;
+    width: 0;
+    z-index:2;
+  }
+  .youtube iframe{ /* youtube embed (responsive) */
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:3;
+  }
+  /* END Fast & Agile YouTube Embed by Schoberg.net */
+
+  /*ignore this*/
+  body{text-align:center;font-family:arial;color:#333;}
+
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+        $(document).ready(function(){
+           $("#footer").load("../footer.html")
+        });
+  </script>
+</head>
+<body>
+
+<!-- Content - alfred -->
+<img class="w3-image w3-hide-medium w3-hide-small" src="../image/river.png">
+<img class="w3-image w3-hide-large" src="../image/river-mobile.png">
+
+<div style="padding:20px 20px;">
+  <p class="content">
+    This is a great app! Do you want to travel to Korea?
+    <br>&nbsp;<br>
+    Then take this! I will guide you to a delicious restaurant!
+  </p>
+</div>
+
+<div class="wrapper youtube">
+    <div class="h_iframe">
+        <iframe src="https://www.youtube.com/embed/W0U6tkSDgA8" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+<div style="height:50px;background-color:#fafafa;">&nbsp;</div>
+
+<div style="background-color:#fafafa;margin-top:-20px;">
+  <h1 class="app-content-sub-desktop">WebSite</h1>
+  <div class="w3-display-container w3-content w3-center" style="margin-top:-20px;padding-bottom:20px;">
+    <a class="link" href="http://river.loannes.com">Go site ></a>
+  </div>
+</div>
+
+<div style="background-color:#fafafa;margin-top:-20px;">
+  <h1 class="app-content-sub-desktop">Download</h1>
+  <div class="w3-display-container w3-content w3-center" style="margin-top:-20px;padding-bottom:20px;">
+    업데이트 중
+    <!-- <a class="link" href="https://itunes.apple.com/us/app/river-a-delicious-world/id1304848904?l=ko&ls=1&mt=8">US</a><br>
+    <a class="link" href="https://itunes.apple.com/kr/app/river-a-delicious-world/id1304848904?l=ko&ls=1&mt=8">대한민국</a> -->
+  </div>
+</div>
+
+<div style="height:50px;background-color:#fafafa;">&nbsp;</div>
+
+<div style="padding:20px 20px;">
+  <p class="content">
+    인스타그램에는 하루에 사람은 셀 수도 없을 만큼의 많은 사진들이 올라옵니다. 음식 사진, 여행 사진, 쇼핑 사진 등, 이미 오래전부터 사람들은 자신의 일상을 인스타그램에 공유하기 시작했습니다.
+
+    우리는 오래 걸리지 않아 사람들의 일상이 인스타그램 안에 녹아 있음을 깨닫게 되었습니다. 만일 인스타그램에 올라오는 데이터를 분석할 수 있는 기술이 있다면,
+    우리는 객관적이고 정확한 정보에 도달할 수 있을 거라 확신했습니다.<br>&nbsp;<br>
+
+    리버의 핵심기술은, 바로 인스타그램에 올라오는 데이터를 분석할 수 있는 이 기술을 말합니다. 리버의 시스템은 매 순간 올라오는 인스타그램의 포스트를 분석하여 우리가 필요한 정보를 추출해 냅니다.
+    우리는 이 일을 하는 것을 "인사이트"라고 부릅니다.<br>&nbsp;<br>
+
+    "인사이트"는 지금 이 순간에도 쉬지 않고 일하고 있습니다. 매 순간 사용자 데이터를 분석하고, 분류하고, 추적하고, 가공해서 사람들이 정말로 많이 가는 곳을 찾아냅니다.<br>&nbsp;<br>
+
+    그리고 우리는 그렇게 가공된 데이터를 편리하게 리버 앱으로 볼 수 있습니다.
+  </p>
+</div>
+
+<div style="height:50px;background-color:#fafafa;">&nbsp;</div>
+
+<div style="padding:20px 20px;">
+  <h1 class="app-content-sub-desktop">개인정보 관련</h1>
+  <p class="content">
+    리버는 그 어떤 개인정보도 서버에 저장하지 않습니다. 리버의 데이터베이스에는 사용자 정보를 저장하는 공간 자체가 없습니다. 그래서 리버에는 회원 가입 절차도, 약관 동의 절차도 존재하지 않습니다.
+    리버는 그 어떤 사용자 데이터도 수집하지 않습니다.<br>&nbsp;<br>
+
+    리버에서 요청하는 위치 정보 요청은, 사용자가 지도를 사용할 경우 자신의 위치를 지도에 전달하기 위해서만 사용됩니다. 만일 원하지 않으면 해당 권한을 비활성 시키면 됩니다.
+    하지만 해당 권한을 허용한다 하더라도 리버는 어떤 사용자 정보도 수집하지 않습니다.
+  </p>
+</div>
+
+<div style="height:50px;background-color:#fafafa;">&nbsp;</div>
+
+<div style="margin-top:100px;margin-bottom:70px;">
+  <div class="w3-display-container w3-content w3-center" style="margin-top:-20px;padding-bottom:20px;">
+    <a class="app-content-sub-desktop" href="../index.html" style="color: #2c71c3;">Home</a>
+  </div>
+</div>
+
+<div id="footer"></div>
+
+</body>
+</html>

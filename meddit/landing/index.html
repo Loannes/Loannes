@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>리디렉션 중...</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 90%;
+        }
+        
+        #message {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        p {
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        #redirect-link {
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        #redirect-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p id="message">리디렉션 준비 중...</p>
+        <p>
+            만약 페이지가 자동으로 이동하지 않으면 <a id="redirect-link" href="#">여기를 클릭해주세요</a>.
+        </p>
+    </div>
+    <script>
+        (async () => {
+            // const apiEndpoint = 'http://localhost:8000/api/redirect-log'; // 나중에 실제 주소로 변경하세요.
+            const apiEndpoint = 'https://imgs.loannes.com/api/redirect-log'; // 나중에 실제 주소로 변경하세요.
+            const urlParams = new URLSearchParams(window.location.search);
+            const sourceUrl = urlParams.get('source_url');
+            const destinationUrl = urlParams.get('destination_url') || 'https://www.naver.com';
+            // https://link.inpock.co.kr/meddit
+            document.getElementById('message').textContent = `잠시 후 ${destinationUrl}(으)로 이동합니다.`;
+            document.getElementById('redirect-link').href = destinationUrl;
+
+            const logRedirect = async () => {
+                const data = {
+                    source_url: sourceUrl,
+                    destination_url: destinationUrl
+                };
+                
+                try {
+                    await fetch(apiEndpoint, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: new URLSearchParams(data)
+                    });
+                } catch (error) {
+                    console.error('리다이렉트 로그 기록 실패:', error);
+                }
+            };
+
+            await logRedirect();
+            window.location.href = destinationUrl;
+        })();
+    </script>
+</body>
+</html> 

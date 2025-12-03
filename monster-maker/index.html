@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Monster Maker</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 언어 전환 버튼 -->
+    <button id="language-toggle" class="language-toggle">
+        <span id="language-flag">🇰🇷</span>
+    </button>
+
+    <!-- 설정 화면 -->
+    <div id="setup-screen" class="screen active">
+        <div class="screen-header">
+            <h1 class="title">MONSTER MAKER</h1>
+        </div>
+        
+        <div class="screen-body">
+            <div class="setting-group">
+                <label class="setting-label" data-i18n="training-type">트레이닝 종류</label>
+                <select id="training-type" class="time-select">
+                    <option value="hanging" data-i18n="hanging">철봉 양손 매달리기</option>
+                    <option value="hangboard-4f-2joint" data-i18n="hangboard-4f-2joint">행보드 4손가락 2마디</option>
+                    <option value="hangboard-4f-1joint" data-i18n="hangboard-4f-1joint">행보드 4손가락 1마디</option>
+                    <option value="hangboard-4f-half" data-i18n="hangboard-4f-half">행보드 4손가락 반마디</option>
+                    <option value="hangboard-3f-2joint" data-i18n="hangboard-3f-2joint">행보드 3손가락 2마디</option>
+                    <option value="hangboard-3f-1joint" data-i18n="hangboard-3f-1joint">행보드 3손가락 1마디</option>
+                    <option value="hangboard-3f-half" data-i18n="hangboard-3f-half">행보드 3손가락 반마디</option>
+                    <option value="hangboard-2f-2joint" data-i18n="hangboard-2f-2joint">행보드 2손가락 2마디</option>
+                    <option value="hangboard-2f-1joint" data-i18n="hangboard-2f-1joint">행보드 2손가락 1마디</option>
+                    <option value="hangboard-2f-half" data-i18n="hangboard-2f-half">행보드 2손가락 반마디</option>
+                    <option value="hangboard-1f-2joint" data-i18n="hangboard-1f-2joint">행보드 1손가락 2마디</option>
+                    <option value="hangboard-1f-1joint" data-i18n="hangboard-1f-1joint">행보드 1손가락 1마디</option>
+                    <option value="hangboard-1f-half" data-i18n="hangboard-1f-half">행보드 1손가락 반마디</option>
+                </select>
+            </div>
+
+            <div class="setting-group" id="level-group">
+                <label class="setting-label" data-i18n="level">단계</label>
+                <select id="training-level" class="time-select">
+                    <!-- JavaScript로 동적 생성 -->
+                </select>
+            </div>
+            
+            <button id="start-btn" class="main-button" data-i18n="start">시작</button>
+        </div>
+    </div>
+
+    <!-- 트레이닝 화면 -->
+    <div id="training-screen" class="screen">
+        <div class="screen-header">
+            <div class="training-info" id="training-info-1"></div>
+            <div class="round-display"><span data-i18n="round">라운드</span> <span id="training-round">1</span></div>
+        </div>
+        
+        <div class="screen-body">
+            <div class="timer-display" id="training-timer">10</div>
+            <div class="mode-label" data-i18n="training">트레이닝</div>
+            <button id="stop-training-btn" class="stop-button" data-i18n="stop">종료</button>
+        </div>
+    </div>
+
+    <!-- 휴식 화면 -->
+    <div id="rest-screen" class="screen">
+        <div class="screen-header">
+            <div class="training-info" id="training-info-2"></div>
+            <div class="round-display"><span data-i18n="round">라운드</span> <span id="rest-round">1</span></div>
+        </div>
+        
+        <div class="screen-body">
+            <div class="timer-display" id="rest-timer">5</div>
+            <div class="mode-label" data-i18n="rest">휴식</div>
+            <button id="stop-rest-btn" class="stop-button" data-i18n="stop">종료</button>
+        </div>
+    </div>
+
+    <!-- 종료 화면 -->
+    <div id="finish-screen" class="screen">
+        <div class="screen-body">
+            <div class="finish-emoji">💪</div>
+            <h2 class="finish-title" data-i18n="complete">완료!</h2>
+            <div class="finish-subtitle" data-i18n="great-job">Great Job!</div>
+            
+            <div class="finish-card">
+                <div class="finish-training-info">
+                    <div class="finish-label" data-i18n="todays-training">오늘의 트레이닝</div>
+                    <div class="finish-training-name" id="finish-training-name">철봉 양손 매달리기</div>
+                    <div class="finish-training-level" id="finish-training-level">1단계</div>
+                </div>
+                
+                <div class="finish-divider"></div>
+                
+                <div class="finish-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon">🔥</div>
+                        <div class="stat-label" data-i18n="total-rounds">총 라운드</div>
+                        <div class="stat-value" id="total-rounds">0</div>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="restart-btn" class="main-button" data-i18n="restart">다시 시작</button>
+        </div>
+    </div>
+
+    <!-- 비프음 오디오 -->
+    <audio id="beep-sound" preload="auto" muted>
+        <source src="sounds/beep.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- 전환 효과음 오디오 -->
+    <audio id="transition-sound" preload="auto" muted>
+        <source src="sounds/ding-dong.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
